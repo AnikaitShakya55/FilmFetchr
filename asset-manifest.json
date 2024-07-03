@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/FilmFetchr/static/css/main.d921db33.css",
-    "main.js": "/FilmFetchr/static/js/main.49f7e441.js",
+    "main.js": "/FilmFetchr/static/js/main.e85ea093.js",
     "index.html": "/FilmFetchr/index.html",
     "main.d921db33.css.map": "/FilmFetchr/static/css/main.d921db33.css.map",
-    "main.49f7e441.js.map": "/FilmFetchr/static/js/main.49f7e441.js.map"
+    "main.e85ea093.js.map": "/FilmFetchr/static/js/main.e85ea093.js.map"
   },
   "entrypoints": [
     "static/css/main.d921db33.css",
-    "static/js/main.49f7e441.js"
+    "static/js/main.e85ea093.js"
   ]
 }
