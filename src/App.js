@@ -11,7 +11,7 @@ function App() {
   const [retryingId, setRetryingId] = useState(null);
 
   useEffect(() => {
-    fetchMovieHandler(); // Fetch data when the component mounts
+    fetchMovieHandler(); 
   }, []);
 
   async function fetchMovieHandler() {
@@ -19,7 +19,7 @@ function App() {
     setError(null);
 
     try {
-      const response = await fetch('https://common-realtime-database-link-default-rtdb.europe-west1.firebasedatabase.app/FetchMovie.json');
+      const response = await fetch('https://expensetracker-e48c6-default-rtdb.firebaseio.com/FetchMovie.json');
       if (!response.ok) {
         throw new Error('Failed to fetch movies');
       }
@@ -58,7 +58,7 @@ function App() {
 
   async function addMovieHandler(movieData) {
     try {
-      const response = await fetch('https://common-realtime-database-link-default-rtdb.europe-west1.firebasedatabase.app/FetchMovie.json', {
+      const response = await fetch('https://expensetracker-e48c6-default-rtdb.firebaseio.com/FetchMovie.json', {
         method: 'POST',
         body: JSON.stringify(movieData),
         headers: { 'Content-Type': 'application/json' }
@@ -68,7 +68,6 @@ function App() {
         throw new Error('Failed to add movie');
       }
       
-      // After successfully adding the movie, fetch the updated list of movies
       fetchMovieHandler();
 
       const data = await response.json();
@@ -97,18 +96,25 @@ function App() {
   
   return (
     <React.Fragment>
-      <section>
-        <Heading/> 
+
+    <div className="fixed top-0 left-0 -z-10 h-full w-full">
+    <div class="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div>
+    </div>
+      <section >  
+        <Heading /> 
         <AddMovieForm addMovieHandler={addMovieHandler} />
       </section>
-      <section>
+  
+      <section >
         <button onClick={fetchMovieHandler}>Fetch Movies</button>
       </section>
-      <section>
+  
+      <section >
         {content}
       </section>
     </React.Fragment>
   );
+  
 }
 
 export default App;
